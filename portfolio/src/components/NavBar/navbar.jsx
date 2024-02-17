@@ -19,7 +19,7 @@ const Navbar = () => {
                 Contact Me
             </button>
         </nav>
-    )
-}
+    );
+};
 
 export default Navbar;
