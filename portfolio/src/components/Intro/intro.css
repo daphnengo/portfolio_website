@@ -1,0 +1,86 @@
+#intro {
+    height: calc(100vh - 4rem);
+    width: 100vw; /* 1000px */
+    max-width: 75rem; /* 1200px */
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+
+    .introContent {
+        height: 800px;
+        padding: 32px;
+        font-size: 48px;
+        font-weight: 100;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        cursor: default;
+
+        .hello {
+            font-size: 30px;
+            font-weight: 100;
+        }
+
+        .nameContent {
+            display: flex;
+            word-spacing: 5px;
+            .introName {
+                padding-left: 15px;
+                color: yellow;
+            }
+        }
+
+        .introPara {
+            font-size: medium;
+            font-weight: 200;
+            letter-spacing: 1px;
+        }
+
+        .hireMeBtn {
+            background-color: white;
+            margin: 16px 0;
+            padding: 10px 32px;
+            border: none;
+            border-radius: 80px;
+            font-size: medium;
+            cursor: pointer;
+        }
+
+        .hireMeImg {
+            height: 20px;
+            width: 20px;
+            margin-right: 10px;
+            padding-top: 6px;
+            object-fit: cover;
+        }
+    }
+
+    .profile {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        object-fit: cover;
+        z-index: -1;
+        height: 600px;
+        width: 400px;
+        border-radius: 20px;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .profile {
+        right: -10vw;
+    }
+    .introContent {
+        font-size: 10vw;
+    }
+    .hello {
+        font-size: 4.5vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .profile {
+        right: -20vw;
+    }
+}
