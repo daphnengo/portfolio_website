@@ -51,6 +51,7 @@
             border-radius: 8px;
             margin: 32px;
             padding: 12px 45px;
+            cursor: pointer;
         }
     }
 }
