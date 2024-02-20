@@ -1,0 +1,80 @@
+#aboutMe {
+    overflow: hidden;
+    width: 100vw;
+    max-width: 65rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+
+    .aboutMeTitle {
+        font-size: 34px;
+        font-weight: 600;
+        padding-top: 32px;
+        margin-bottom: 10px;
+    }
+
+    .aboutMeDesc {
+        font-weight: 400;
+        font-size: 18px;
+        max-width: 50rem;
+        padding: 20px;
+    }
+
+    .aboutMeBars {
+        margin: 15px;
+        width: 100vw;
+        max-width: 80%;
+        text-align: left;
+
+        .aboutMeBar {
+            display: flex;
+            margin: 12px;
+            padding: 10px 15px;
+            border-radius: 15px;
+            background: rgb(50, 50, 50);
+
+            .aboutMeBarImg {
+                width: 120px;
+                height: 120px;
+                margin-right: 22px;
+                object-fit: cover;
+                border-radius: 15px;
+            }
+
+            .aboutMeText {
+                h2 {
+                    font-size: 25px;
+                    font-weight: 300;
+                    margin-top: 15px;
+                }
+                p {
+                    font-size: 16px;
+                    font-weight: 100;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:720px) {
+    .aboutMeText>p {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .aboutMeText>h2 {
+        font-size: 18px;
+    }
+    .aboutMeText>p {
+        font-size: 15px;
+    }
+
+    .aboutMeBarImg {
+        width: 50px;
+        height: 50px;
+    }
+}
