@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography } from '@mui/material';
+import { Typography, CardMedia } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import profile from '../../assets/profile.jpg';
 import './intro.css';
@@ -23,6 +23,7 @@ const Intro = () => {
         flexDirection: 'column',
         justifyContent: 'center',
         cursor: 'default',
+        marginLeft: '50px',
     }));
 
     const IntroContentStyles = styled('div')(() => ({
@@ -40,7 +41,7 @@ const Intro = () => {
     }));
 
     return (
-        <IntroSectionStyles className="introSection">
+        <IntroSectionStyles id="intro" className="introSection">
             <IntroStyles className="intro">
                 <Typography
                     className="intro__label"
@@ -76,7 +77,22 @@ const Intro = () => {
                     I am a skilled software engineer with experience in <br /> front-end web developments
                 </Typography>
             </IntroStyles>
-            <img src={profile} alt="Profile" className="profile" />
+            <CardMedia
+                className="profile"
+                sx={{
+                    height: 600,
+                    width: 400,
+                    objectFit: 'cover',
+                    position: 'absolute',
+                    top: 80,
+                    right: 40,
+                    zIndex: -1,
+                    borderRadius: '20px',
+                }}
+                src='img'
+                image={profile}
+                title="profile"
+            />
         </IntroSectionStyles>
     );
 };
