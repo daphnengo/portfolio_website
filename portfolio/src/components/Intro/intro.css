@@ -1,23 +1,7 @@
-
-.profile {
-    position: absolute;
-    top: 80px;
-    right: 40px;
-    object-fit: cover;
-    z-index: -1;
-    height: 600px;
-    width: 400px;
-    border-radius: 20px;
-}
-
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 750px) {
     .profile {
-        right: -10vw;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .profile {
-        right: -20vw;
+        height: 450px;
+        width: 250px;
+        top:  140px;
     }
 }
