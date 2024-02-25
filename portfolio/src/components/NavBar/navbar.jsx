@@ -87,7 +87,28 @@ const Navbar2 = () => {
         },
     }));
 
-    // const NavbarOptions = ['Home', 'About Me', 'Portfolio', 'Skills'];
+    const NavbarOptions = [
+        {
+            id: 'intro',
+            text: 'Home',
+        },
+        {
+            id: 'aboutMe',
+            text: 'About Me',
+        },
+        {
+            id: 'portfolio',
+            text: 'Portfolio',
+        },
+        {
+            id: 'skills',
+            text: 'Skills',
+        },
+        {
+            id: 'contact',
+            text: 'Contact Me',
+        },
+    ];
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = event => {
@@ -96,6 +117,41 @@ const Navbar2 = () => {
     const handleClose = () => {
       setAnchorEl(null);
     };
+
+    const _constructNavbar = () => (
+        NavbarOptions.map((option, index) => {
+            if (option.id === 'contact') {
+                return null;
+            }
+
+            return (
+                <NavbarItemButton
+                    id={index}
+                    onClick={() => {
+                        document.getElementById(option.id)?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                >
+                    <Typography variant="h6">{option.text}</Typography>
+                </NavbarItemButton>
+            );
+        })
+    );
+
+    const _constructMenuItemList = () => (
+        NavbarOptions.map((option, index) => {
+            return (
+                <MenuItemStyles
+                    id={index}
+                    onClick={() => {
+                        document.getElementById(option.id)?.scrollIntoView({ behavior: 'smooth' });
+                        handleClose();
+                    }}
+                >
+                    <Typography variant="h6">{option.text}</Typography>
+                </MenuItemStyles>
+            );
+        })
+    );
 
     return (
         <NavbarSectionStyles className="navbarSection">
@@ -111,34 +167,7 @@ const Navbar2 = () => {
                     title="logo"
                 />
                 <Toolbar variant="dense" disableGutters className="toolbar">
-                    <NavbarItemButton
-                        onClick={() => {
-                            document.getElementById('intro')?.scrollIntoView({ behavior: 'smooth' });
-                        }}
-                    >
-                        <Typography variant="h6">Home</Typography>
-                    </NavbarItemButton>
-                    <NavbarItemButton
-                        onClick={() => {
-                            document.getElementById('aboutMe')?.scrollIntoView({ behavior: 'smooth' });
-                        }}
-                        >
-                        <Typography variant="h6">About Me</Typography>
-                    </NavbarItemButton>
-                    <NavbarItemButton
-                        onClick={() => {
-                            document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
-                        }}
-                        >
-                        <Typography variant="h6">Portfolio</Typography>
-                    </NavbarItemButton>
-                    <NavbarItemButton
-                        onClick={() => {
-                            document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' });
-                        }}
-                        >
-                        <Typography variant="h6">Skills</Typography>
-                    </NavbarItemButton>
+                    {_constructNavbar()}
                 </Toolbar>
                 <ContactButtonStyles
                     onClick={() => {
@@ -190,46 +219,7 @@ const Navbar2 = () => {
                         'aria-labelledby': 'basic-button',
                     }}
                 >
-                    <MenuItemStyles
-                        onClick={() => {
-                            document.getElementById('intro')?.scrollIntoView({ behavior: 'smooth' });
-                            handleClose();
-                        }}
-                    >
-                        <Typography variant="h6">Home</Typography>
-                    </MenuItemStyles>
-                    <MenuItemStyles
-                        onClick={() => {
-                            document.getElementById('aboutMe')?.scrollIntoView({ behavior: 'smooth' });
-                            handleClose();
-                        }}
-                    >
-                        <Typography variant="h6">About Me</Typography>
-                    </MenuItemStyles>
-                    <MenuItemStyles
-                        onClick={() => {
-                            document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
-                            handleClose();
-                        }}
-                    >
-                        <Typography variant="h6">Portfolio</Typography>
-                    </MenuItemStyles>
-                    <MenuItemStyles
-                        onClick={() => {
-                            document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' });
-                            handleClose();
-                        }}
-                    >
-                        <Typography variant="h6">Skills</Typography>
-                    </MenuItemStyles>
-                    <MenuItemStyles
-                        onClick={() => {
-                            document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                            handleClose();
-                        }}
-                    >
-                        <Typography variant="h6">Contact</Typography>
-                    </MenuItemStyles>
+                    {_constructMenuItemList()}
                 </Menu>
             </AppBarStyles>
         </NavbarSectionStyles>
