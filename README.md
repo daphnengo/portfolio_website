@@ -2,5 +2,5 @@
 
 ## Issue tracking
 
-Git issues in this repository are used for creating my portfolio website.
-Using React and MUI v5
+#### Git issues in this repository are used for creating my portfolio website.
+#### Using React and MUI v5
